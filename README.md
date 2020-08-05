@@ -25,7 +25,11 @@
 | name                      | text       | null: false                    |
 | product_explanation       | text       | null: false                    |
 | price                     | integer    | null: false                    |
-| exhibitor                 | string     | null: false                    |
+| category                  | string     | null: false                    |
+| product_status            | string     | null: false                    |
+| shopping_origin           | string     | null: false                    |
+| bearer_of_shopping_charge | string     | null: false                    |
+| days_until_delivery       | string     | null: false                    |
 | user                      | references | null: false, foreign_key: true |
 
 ### Association
@@ -53,7 +57,7 @@
 | city                      | string     | null: false                    |
 | house_number              | string     | null: false                    |
 | building_name             | string     | null: true                     |
-| phone_number              | integer    | null: false                    |
+| phone_number              | string     | null: false                    |
 | items                     | references | null: false, foreign_key: true |
 
 ## Association
