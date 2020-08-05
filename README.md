@@ -19,18 +19,18 @@
 
 ## items テーブル
 
-| Column                    | Type       |  Options                       |
-| ------------------------- | ---------- | ------------------------------ |
-| exhibition_image          | blob       | null: false                    |
-| name                      | text       | null: false                    |
-| product_explanation       | text       | null: false                    |
-| price                     | integer    | null: false                    |
-| category                  | string     | null: false                    |
-| product_status            | string     | null: false                    |
-| shopping_origin           | string     | null: false                    |
-| bearer_of_shopping_charge | string     | null: false                    |
-| days_until_delivery       | string     | null: false                    |
-| user                      | references | null: false, foreign_key: true |
+| Column                        | Type       |  Options                       |
+| ----------------------------- | ---------- | ------------------------------ |
+| exhibition_image              | blob       | null: false                    |
+| name                          | text       | null: false                    |
+| product_explanation           | text       | null: false                    |
+| price                         | integer    | null: false                    |
+| category_id                   | integer    | null: false                    |
+| product_status_id             | integer    | null: false                    |
+| shopping_origin_id            | integer    | null: false                    |
+| bearer_of_shopping_charge _id | integer    | null: false                    |
+| days_until_delivery_id        | integer    | null: false                    |
+| user                          | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
