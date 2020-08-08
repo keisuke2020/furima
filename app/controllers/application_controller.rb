@@ -2,19 +2,6 @@ class ApplicationController < ActionController::Base
   before_action :basic_auth
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  protected
-
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname])
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:email])
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:password])
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:family_name_full_width])
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name_full_width])
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:family_name_kana_input])
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name_kana_input])
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:birthday])
-  end
-
   private
 
   def basic_auth
@@ -22,4 +9,10 @@ class ApplicationController < ActionController::Base
       username == ENV["BASIC_AUTH_USER"] && password == ENV["BASIC_AUTH_PASSWORD"] 
     end
   end
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :family_name_full_width, 
+      :first_name_full_width, :family_name_kana_input, :first_name_kana_input, :birthday])
+  end
+
 end
